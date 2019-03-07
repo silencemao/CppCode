@@ -40,6 +40,10 @@ int main(){
     string word1 = "mart";
     string word2 = "karma";
 
-    cout<<minDistance(word1, word2)<<endl;
+//    cout<<minDistance(word1, word2)<<endl;
+    int a[] = {1, 2};
+    cout<<a<<endl;
+    cout<<&a<<endl;
+    cout<<&a[0]<<endl;
     return 0;
 }
