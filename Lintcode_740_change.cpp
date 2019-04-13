@@ -62,7 +62,18 @@ int change1(int amount, vector<int> &coins){
 
     for (int i=coins.size()-1; i>=0; i--){
         for (int j=0; j<=amount; j++)
+            /**
+             *  j>=coins[i]时，dp[i][j-coins[i]]表示j腾出coins[i]空间时的组成个数
+             *  dp[i+1][j]表示其它数字组成j的方法数
+             */
+
             dp[i][j] = j >= coins[i] ? dp[i][j-coins[i]] + dp[i+1][j] : dp[i+1][j];
+    }
+
+    for (auto vec : dp){
+        for(auto num : vec)
+            cout<<num<<" ";
+        cout<<endl;
     }
     return dp[0][amount];
 }
